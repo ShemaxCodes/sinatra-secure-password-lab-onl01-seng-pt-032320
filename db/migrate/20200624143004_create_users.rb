@@ -5,3 +5,8 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :password_digest 
   end
 end
+
+def down 
+  drop_table :users 
+end 
+end 
