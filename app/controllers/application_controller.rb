@@ -40,6 +40,7 @@ class ApplicationController < Sinatra::Base
     ##your code here
     user = User.find_by(username: params[:username])
     if user.save && user.authenticate(params[:password])
+      session[:user_id] = user.id
   end
 
   get "/failure" do
